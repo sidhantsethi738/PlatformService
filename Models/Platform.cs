@@ -2,5 +2,6 @@
 {
     public class Platform
     {
+        public int PlatformNo { get; set; }
     }
 }
