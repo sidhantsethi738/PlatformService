@@ -15,10 +15,10 @@ namespace PlatformService.Data
         }
         public void CreatePlatform(Platform platform)
         {
-           if(platform == null)
+            if (platform == null)
                 throw new ArgumentNullException(nameof(platform));
 
-           _appDbContext.Platforms.Add(platform);
+            _appDbContext.Platforms.Add(platform);
         }
 
         public Platform GePlatformById(int id)
@@ -35,5 +35,12 @@ namespace PlatformService.Data
         {
             return (_appDbContext.SaveChanges() >= 0);
         }
+
+        public bool NameExists(string Name)
+        {
+            return _appDbContext.Platforms.Any(x => x.Name == Name.ToLower());
+        }
+
+
     }
 }
