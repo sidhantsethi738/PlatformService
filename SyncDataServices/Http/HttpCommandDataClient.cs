@@ -21,7 +21,7 @@ namespace PlatformService.SyncDataServices.Http
         {
             var httpContent = new StringContent(
                 JsonSerializer.Serialize(platformRead), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("https://localhost:44310/api/c/Platforms/" ,httpContent );
+            var response = await _httpClient.PostAsync($"{_config["CommandService"]}/api/c/Platforms/" ,httpContent );
 
             if(response.IsSuccessStatusCode)
                 System.Console.WriteLine("Response is successful");
