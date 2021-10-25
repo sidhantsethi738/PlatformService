@@ -16,7 +16,9 @@ namespace PlatformService.Data
         public void CreatePlatform(Platform platform)
         {
             if (platform == null)
+            {
                 throw new ArgumentNullException(nameof(platform));
+            }
 
             _appDbContext.Platforms.Add(platform);
         }

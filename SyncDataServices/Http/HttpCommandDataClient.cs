@@ -24,10 +24,13 @@ namespace PlatformService.SyncDataServices.Http
             var response = await _httpClient.PostAsync($"{_config["CommandService"]}/api/c/Platforms/", httpContent);
 
             if (response.IsSuccessStatusCode)
+            {
                 System.Console.WriteLine("Response is successful");
+            }
             else
+            {
                 System.Console.WriteLine("Response is  unsuccessful");
-
+            }
         }
     }
 }
