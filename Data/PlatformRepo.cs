@@ -40,7 +40,7 @@ namespace PlatformService.Data
 
         public bool NameExists(string Name)
         {
-            return _appDbContext.Platforms.Any(x => x.Name == Name.ToLower());
+            return _appDbContext.Platforms.Any(p => p.Name.ToLower() == Name.ToLower());
         }
 
 
